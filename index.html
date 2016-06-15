@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <title>Concealed Carry Laws</title>
 <meta charset="utf-8"/>
-<meta property="og:site_name" content="CommonlyOwned.org" />
-<meta property="og:title" content="Concealed Carry Laws From 1986 to 2015" />
+<meta property="og:site_name" content="joshuasouders.com" />
+<meta property="og:title" content="Concealed Carry Laws From 1986 to 2016" />
 <meta property="og:description" content="Watch the progression of concealed carry rights over the past 30 years." />
-<meta property="og:image" content="http://commonlyowned.org/concealedcarry/default-image.png" />
+<meta property="og:image" content="http://joshuasouders.com/concealedcarrymap/default-image.png" />
 
 <head>
 <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
@@ -201,13 +201,13 @@ h1{
 
 </head>
 <body>
-  <script>
+<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-55017085-4', 'auto');
+  ga('create', 'UA-55017085-10', 'auto');
   ga('send', 'pageview');
 
 </script>
@@ -218,7 +218,7 @@ h1{
     <div id="time">
       <p style="display:inline-block; font-size:20px;" id="firstYear"></p>
       <div class="timeLapseContainer">
-        <input id="ex6" type="text" data-slider-min="1986" data-slider-max="2015" data-slider-step="1" data-slider-value="1986">
+        <input id="ex6" type="text" data-slider-min="1986" data-slider-max="2016" data-slider-step="1" data-slider-value="1986">
       </div>
       <p style="display:inline-block; font-size:20px;" id="lastYear"></p>
       <button type="button" class="btn btn-default btn-animate" id="animate">Animate</button>
@@ -234,8 +234,8 @@ h1{
           hashtags=example%2Cdemo&
           text=custom%20share%20text" target="_blank">
         </a>
-        <a id="googlePlus" class="ssk ssk-google-plus" href="https://plus.google.com/share?url=http://commonlyowned.org/concealedcarry/" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"></a>
-        <a id="email" class="ssk ssk-email" href="mailto:?subject=Concealed carry rights, from 1984 to 2015&amp;body=Check out this site: http://commonlyowned.org/concealedcarry. It has a really cool map that shows how the concealed carry laws have changed over time."
+        <a id="googlePlus" class="ssk ssk-google-plus" href="https://plus.google.com/share?url=http://joshuasouders.com/concealedcarrymap/" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"></a>
+        <a id="email" class="ssk ssk-email" href="mailto:?subject=Concealed carry rights, from 1984 to 2016&amp;body=Check out this site: http://joshuasouders.com/concealedcarrymap. It has a really cool map that shows how the concealed carry laws have changed over time."
         title="Share by Email"></a>
         <a id="embed" href="#embedmodal" class="ssk ssk-embed" data-toggle="modal" data-target="#embedmodal"><span class="glyphicon glyphicon-export"></span></a>
 
@@ -250,7 +250,7 @@ h1{
       </div>
       <div class="modal-body">
         <code>
-          &lt;iframe src="http://commonlyowned.org/concealedcarry" width="1000" height="600"&gt;&lt;/iframe&gt;
+          &lt;iframe src="http://joshuasouders.com/concealedcarrymap" width="1000" height="600"&gt;&lt;/iframe&gt;
         </code>
       </div>
       <div class="modal-footer">
@@ -293,7 +293,7 @@ h1{
     var animating = false;
     var layer;
     var firstYear = 1986;
-    var lastYear = 2015;
+    var lastYear = 2016;
     var currentYear = 1986;
     var interval;
 
@@ -309,9 +309,9 @@ h1{
 
         var div = L.DomUtil.create('div', 'info legend');
         // loop through our density intervals and generate a label with a colored square for each interval
-        div.innerHTML += '<div id="constitutional" title="Unrestricted Carry is when the state doesn\'t require a permit to carry a concealed firearm. This is the least resrictive law." class="tooltip"><i style="background:' + getColor(3) + '"></i>&ndash; Unrestricted Carry</div><br>';
+        div.innerHTML += '<div id="constitutional" title="Constitutional Carry is when the state doesn\'t require a permit to carry a concealed firearm. This is the least restrictive law." class="tooltip"><i style="background:' + getColor(3) + '"></i>&ndash; Constitutional Carry</div><br>';
         div.innerHTML += '<div id="shall" title="Shall Issue is when the state requires a permit to carry a concealed firearm, however, they must issue a permit to an applicant if he/she meets a set of objective and generally permissive criteria (he/she must be a certain age, not be a felon, etc)." class="tooltip"><i style="background:' + getColor(2) + '"></i>&ndash; Shall Issue</div><br>';
-        div.innerHTML += '<div id="may" title="May Issue is when the state requires a permit to carry a concealed firearm, however, the issuance of the permit is at the discretion of the issuing authority (assuming the applicant also meets the minimum objective requirements in the state law, such as age and criminal status). Authorities in may issue states might decide that everyone is qualified for a concealed permit, or they might reject every applicant, or they might arbitrarily decide who gets a permit and who does not. Good and substantial reason [to carry a concealed firearm] is frequently a necessity for applicants, and in many states self defense is not a valid good and substatial reason which in practice means that the average citizen will never recieve a concealed carry permit. This is increasingly true in later years." class="tooltip"><i style="background:' + getColor(1) + '"></i>&ndash; May Issue</div><br>';
+        div.innerHTML += '<div id="may" title="May Issue is when the state requires a permit to carry a concealed firearm, however, the issuance of the permit is at the discretion of the issuing authority (assuming the applicant also meets the minimum objective requirements in the state law, such as age and criminal status). Authorities in may issue states might decide that everyone is qualified for a concealed permit, or they might reject every applicant, or they might arbitrarily decide who gets a permit and who does not. Good and substantial reason [to carry a concealed firearm] is frequently a necessity for applicants, and in many states self defense is not a valid good and substantial reason which in practice means that the average citizen will never recieve a concealed carry permit. This is increasingly true in later years." class="tooltip"><i style="background:' + getColor(1) + '"></i>&ndash; May Issue</div><br>';
         div.innerHTML += '<div id="no" title="No Issue is when the state has no method to apply for a concealed carry permit and the carrying of concealed firearms is illegal. This is the most restrictive law." class="tooltip"><i style="background:' + getColor(0) + '"></i>&ndash; No Issue</div>';
 
         return div;
@@ -340,7 +340,7 @@ h1{
           success: function(data){
             for(var i = 0; i < data.length; i++){
               stateBoundaries.features[i].properties.years = {};
-              for(var x = 1986; x <= 2015; x++){
+              for(var x = 1986; x <= 2016; x++){
                 var obj = {};
                 obj[(x.toString())] = data[i][x.toString()];
                 stateBoundaries.features[i].properties.years[x.toString()] = obj;
@@ -383,9 +383,17 @@ h1{
 
                   firstTemp = feature.properties["years"][(firstYear + i).toString()][(firstYear + i).toString()];
 
-                  popup += '<td>' + (firstYear + i).toString() + ' - ';
+                  if(numToStatus(feature.properties["years"][(firstYear + i).toString()][(firstYear + i).toString()]) != numToStatus(feature.properties["years"][lastYear.toString()][lastYear.toString()])){
+                    popup += '<td>' + (firstYear + i).toString() + ' - ';
+                  }
+                  else{
+                    popup += '<td>' + (firstYear + i).toString();
+                  }
                 }
-                popup += lastYear + '</td><td>' + numToStatus(feature.properties["years"][lastYear.toString()][lastYear.toString()]) + '</td></tr></tbody></table>'
+                if(numToStatus(feature.properties["years"][(lastYear - 1).toString()][(lastYear - 1).toString()]) === numToStatus(feature.properties["years"][lastYear.toString()][lastYear.toString()])){
+                  popup += lastYear;
+                }
+                popup += '</td><td>' + numToStatus(feature.properties["years"][lastYear.toString()][lastYear.toString()]) + '</td></tr></tbody></table>'
                 layer.bindPopup(popup);
               }
             }).addTo(map);
@@ -397,7 +405,7 @@ h1{
     document.getElementById("facebook").addEventListener("click", function(){
         FB.ui({
           method: 'share',
-          href: 'http://commonlyowned.org/concealedcarry/',
+          href: 'http://joshuasouders.com/concealedcarrymap/',
         }, function(response){});
     });
 
@@ -427,7 +435,7 @@ h1{
         return "Shall Issue";
       }
       else{
-        return "Unrestricted Carry";
+        return "Constitutional Carry";
       }
     }
 
