@@ -2,7 +2,7 @@
 <title>Concealed Carry Laws</title>
 <meta charset="utf-8"/>
 <meta property="og:site_name" content="joshuasouders.com" />
-<meta property="og:title" content="Concealed Carry Laws From 1986 to 2016" />
+<meta property="og:title" content="Concealed Carry Laws From 1986 to 2017" />
 <meta property="og:description" content="Watch the progression of concealed carry rights over the past 30 years." />
 <meta property="og:image" content="http://joshuasouders.com/concealedcarrymap/default-image.png" />
 
@@ -218,7 +218,7 @@ h1{
     <div id="time">
       <p style="display:inline-block; font-size:20px;" id="firstYear"></p>
       <div class="timeLapseContainer">
-        <input id="ex6" type="text" data-slider-min="1986" data-slider-max="2016" data-slider-step="1" data-slider-value="1986">
+        <input id="ex6" type="text" data-slider-min="1986" data-slider-max="2017" data-slider-step="1" data-slider-value="1986">
       </div>
       <p style="display:inline-block; font-size:20px;" id="lastYear"></p>
       <button type="button" class="btn btn-default btn-animate" id="animate">Animate</button>
@@ -235,7 +235,7 @@ h1{
           text=custom%20share%20text" target="_blank">
         </a>
         <a id="googlePlus" class="ssk ssk-google-plus" href="https://plus.google.com/share?url=http://joshuasouders.com/concealedcarrymap/" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"></a>
-        <a id="email" class="ssk ssk-email" href="mailto:?subject=Concealed carry rights, from 1984 to 2016&amp;body=Check out this site: http://joshuasouders.com/concealedcarrymap. It has a really cool map that shows how the concealed carry laws have changed over time."
+        <a id="email" class="ssk ssk-email" href="mailto:?subject=Concealed carry rights, from 1984 to 2017&amp;body=Check out this site: http://joshuasouders.com/concealedcarrymap. It has a really cool map that shows how the concealed carry laws have changed over time."
         title="Share by Email"></a>
         <a id="embed" href="#embedmodal" class="ssk ssk-embed" data-toggle="modal" data-target="#embedmodal"><span class="glyphicon glyphicon-export"></span></a>
 
@@ -293,7 +293,7 @@ h1{
     var animating = false;
     var layer;
     var firstYear = 1986;
-    var lastYear = 2016;
+    var lastYear = 2017;
     var currentYear = 1986;
     var interval;
 
@@ -322,10 +322,9 @@ h1{
     function style(feature) {
         return {
             fillColor: getColor(feature.properties.years[currentYear][currentYear]),
-            weight: 2,
+            weight: .5,
             opacity: 1,
-            color: 'white',
-            dashArray: '3',
+            color: '#242426',
             fillOpacity: 1
         };
     }
@@ -340,7 +339,7 @@ h1{
           success: function(data){
             for(var i = 0; i < data.length; i++){
               stateBoundaries.features[i].properties.years = {};
-              for(var x = 1986; x <= 2016; x++){
+              for(var x = 1986; x <= 2017; x++){
                 var obj = {};
                 obj[(x.toString())] = data[i][x.toString()];
                 stateBoundaries.features[i].properties.years[x.toString()] = obj;
@@ -411,16 +410,16 @@ h1{
 
     function getColor(value){
       if(value == 0){
-        return "#d7191c";
+        return "#ffffcc";
       }
       else if(value == 1){
-        return "#eb8183";
+        return "#c2e699";
       }
       else if(value == 2){
-        return "#b4ffad";
+        return "#78c679";
       }
       else{
-        return "#11c900";
+        return "#238443";
       }
     }
 
